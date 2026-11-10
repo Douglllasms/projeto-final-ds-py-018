@@ -123,11 +123,13 @@ _Painel esquerdo: tempo médio de entrega com e sem chuva; painel direito: perce
 | Hipótese                       | Teste principal         |       p-valor | Efeito                               | Decisão        | Em linguagem de negócio                                 |
 | ------------------------------ | ----------------------- | ------------: | ------------------------------------ | -------------- | ------------------------------------------------------- |
 | H1 chuva × tempo de entrega    | Welch unilateral        |       < 0,001 | +9,13 min; d = 0,89                  | Rejeita H0     | chuva está associada a entregas mais demoradas          |
-| H2 cupom × ticket              | Mann-Whitney bilateral  |       < 0,001 | mediana −R$ 5,60                     | Rejeita H0     | pedidos com cupom têm ticket típico menor; não mede ROI |
+| H2 cupom × ticket              | Welch bilateral         |        0,0049 | média −R$ 4,97; mediana −R$ 5,60     | Rejeita H0     | pedidos com cupom têm valor menor; não mede ROI         |
 | H3 tempo × avaliação           | Spearman + Mann-Whitney |       < 0,001 | ρ = −0,24; notas baixas 6,5% → 15,4% | Rejeita H0     | tempos maiores estão associados a avaliações piores     |
 | H4 cozinha × ticket            | Kruskal-Wallis          |       < 0,001 | ε² ≈ 0,41                            | Rejeita H0     | o tipo de cozinha está fortemente associado ao ticket   |
 | H5 cidade × forma de pagamento | Qui-quadrado            |         0,695 | V de Cramér = 0,015                  | Não rejeita H0 | não houve evidência relevante de associação             |
 | H6 plataforma × ticket         | ANOVA + Kruskal-Wallis  | 0,712 / 0,659 | η² ≈ 0; ε² = 0                       | Não rejeita H0 | não houve diferença relevante de ticket por plataforma  |
+
+*H2 — teste complementar:* Mann-Whitney bilateral (p < 0,001), utilizado para verificar diferenças na distribuição dos valores dos pedidos diante da presença de valores extremos. O Welch bilateral permanece como teste principal previsto no planejamento da Tarefa 1.2.
 
 ### 7. Recomendações
 

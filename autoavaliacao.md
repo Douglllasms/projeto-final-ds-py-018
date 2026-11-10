@@ -9,9 +9,10 @@
 - Que um valor extremo nem sempre é erro. Os pedidos de até R$ 2.299 pareciam
   erro, mas, investigando, pareciam pedidos grandes reais. Por isso passei a
   usar a mediana como ticket típico.
-- Que, com muitos dados, quase todo teste dá p-valor pequeno. O tamanho do
-  efeito (d de Cohen, ε², V de Cramér) é o que mostra se a diferença importa
-  para o negócio.
+- Que amostras grandes podem detectar diferenças muito pequenas como
+  estatisticamente significativas. Por isso, além do p-valor, preciso
+  considerar o tamanho do efeito (d de Cohen, ε², V de Cramér) e avaliar
+  a importância prática do resultado para o negócio.
 - Que correlação não é causa. Os dias de chuva têm mais pedidos, mas a chuva
   se concentra em dezembro, que também tem mais pedidos. A época do ano pode
   explicar parte da relação.
@@ -31,5 +32,8 @@
 - Refaria o teste da chuva (H1) usando a média de cada cidade-dia, porque a
   chuva é medida nessa granularidade e o teste por pedido deixa o p-valor
   otimista.
-- Recuperaria as 297 distâncias faltantes usando a fórmula da taxa
-  (R$ 4,99 + R$ 0,90 por km), que descobri só na Etapa 8.
+- Investigaria a possibilidade de estimar as 297 distâncias ausentes
+  associadas a taxas positivas, utilizando a relação aproximada encontrada
+  na Etapa 8 (taxa ≈ R$ 4,99 + R$ 0,90 por km). Antes, verificaria se a
+  regra é válida para esses pedidos e identificaria as estimativas como
+  valores estimados, não como distâncias realmente observadas.
